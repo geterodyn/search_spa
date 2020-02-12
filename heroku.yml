@@ -1,8 +1,8 @@
 setup:
   addons:
-    - hobby-dev: heroku-postgresql
+    - plan: heroku-postgresql
       as: DATABASE
-    - hobby-dev: heroku-redis
+    - plan: heroku-redis
       as: REDIS
 build:
   docker:
