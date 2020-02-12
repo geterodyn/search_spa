@@ -1,0 +1,18 @@
+setup:
+  addons:
+    - hobby-dev: heroku-postgresql
+      as: DATABASE
+    - hobby-dev: heroku-redis
+      as: REDIS
+build:
+  docker:
+    web: Dockerfile
+release:
+  command:
+    - ./init_migrate.sh
+  image: web
+run:
+  worker:
+    command:
+      - celery worker --app=mysearch.app -l info
+    image: web
