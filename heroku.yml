@@ -1,10 +1,6 @@
 build:
   docker:
     web: Dockerfile
-release:
-  command:
-    - ./init_migrate.sh
-  image: web
 run:
   worker:
     command:
