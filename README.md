@@ -3,11 +3,17 @@
 Проект предполагает упаковку приложения в Docker-контейнер и публикацию контейнера на платформе Heroku. Деплой контейнера осуществляется с помощью файла `heroku.yml`
 # Инструкция
   - [Склонировать](https://github.com/geterodyn/search_spa.git) проект в локальную директорию
-  `git clone https://github.com/geterodyn/search_spa.git`
+  ```
+  git clone https://github.com/geterodyn/search_spa.git
+  ```
   - Создать приложение в Heroku:
-  `heroku create your-app-name`
+  ```
+  heroku create your-app-name
+  ```
   - Установить тип стека приложения в зачение "контейер":
-  `heroku stack:set container`
+  ```
+  heroku stack:set container
+  ```
   - Установить плагины Redis и Postgresql для своего приложения:
   ```
     heroku addons:create heroku-redis:hobby-dev -a your-app-name
@@ -15,8 +21,12 @@
   ```
   В результате появятся две переменные среды на Хероку _`DATABASE_URL`_ и _`REDIS_URL`_, которые мы используем в настройках нашего приложения
   - Начать сборку контейнера и деплой на Хероку
-  `git push heroku master`
+  ```
+  git push heroku master
+  ```
   - Включить работу worker dyno:
-  `heroku ps:scale worker=1`
+  ```
+  heroku ps:scale worker=1
+  ```
   
 В итоге, приложение будет доступно по адресу `https://your-app-name.herokuapp.com`
