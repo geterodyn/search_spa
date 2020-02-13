@@ -28,5 +28,11 @@
   ```
   heroku ps:scale worker=1
   ```
+  - Примените начальные миграции
+  ```
+  heroku run sh
+  $ python3 manage.py makemigrations
+  $ python3 manage.py migrate
+  ```
   
 В итоге, приложение будет доступно по адресу `https://your-app-name.herokuapp.com`
