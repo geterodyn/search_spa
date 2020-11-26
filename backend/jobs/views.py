@@ -45,3 +45,5 @@ def jobs_update(request):
 def jobs_delete(request):
     JobItem.objects.all().delete()
     return HttpResponse(status=201)
+
+#test
